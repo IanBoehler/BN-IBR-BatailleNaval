@@ -8,7 +8,7 @@ Ce module MA-20 a pour objectifs d'entraîner les étudiants à la réalisation 
 Le type d’application C demandé doit offrir les fonctionnalités minimales suivantes :
 Version 0.1 (pour le 2 mars 2018) :
 *	Jouer à la bataille navale alors que la position des bateaux est codée dans le programme
-*	Afficher l’aide du jeu
+*	Afficher l’aide du jeu  
 Version 1.0 (pour le 20 avril 2018)
 *	S’authentifier en tant que joueur
 *	Logger les faits importants durant toute la durée de fonctionnement de l’application
