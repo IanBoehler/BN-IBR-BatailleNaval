@@ -1,0 +1,3 @@
+C:/Users/Ian.Boehler/CLionProjects/BN-IBR-BatailleNavale/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Ian.Boehler/CLionProjects/BN-IBR-BatailleNavale/cmake-build-debug/CMakeFiles/BN_IBR_BatailleNavale.dir
+C:/Users/Ian.Boehler/CLionProjects/BN-IBR-BatailleNavale/cmake-build-debug/CMakeFiles/edit_cache.dir
