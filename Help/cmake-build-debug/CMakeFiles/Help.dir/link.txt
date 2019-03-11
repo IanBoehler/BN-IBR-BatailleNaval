@@ -1,3 +1,0 @@
-C:\Clion\bin\cmake\win\bin\cmake.exe -E remove -f CMakeFiles\Help.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\Help.dir/objects.a @CMakeFiles\Help.dir\objects1.rsp
-C:\MinGW\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\Help.dir/objects.a -Wl,--no-whole-archive  -o Help.exe -Wl,--out-implib,libHelp.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Help.dir\linklibs.rsp
