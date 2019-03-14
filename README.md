@@ -20,9 +20,9 @@ Pour l'exécutable, vous devez:
 1. Ouvrir le fichier BN-Bataille-Navale
 
 ## Exécution
-(Cette section explique comment exécuter le programme)
+
 Pour exécuter le programme, vous devez:
 
-1. Aller dans le repository
-1. Ouvrir "Bataille-Navale"
-1. Ouvrir l'executable
+1. Double cliquer sur le BN-Bataille-Naval.exe
+1. Suivre les instructions qui s'affiche
+
