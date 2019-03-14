@@ -1,20 +1,28 @@
-# WarShip
+# Bataille-Navale
 
-Bonjour mon nom est Ian Boehler je vis à Yvonand dans le canton de Vaud notre professeur nous a demander d'écrire n'importe quoi mais aucune insanité.
+## Description
+	Un programme fait en C qui permettera de faire une partie en 1 contre 1 avec l'ordinateur
 
-## 7.1	Généralités
-Ce module MA-20 a pour objectifs d'entraîner les étudiants à la réalisation de projet de type développement.
-## 7.2	Fonctionnalités minimales
-Le type d’application C demandé doit offrir les fonctionnalités minimales suivantes :
-Version 0.1 (pour le 2 mars 2018) :
-*	Jouer à la bataille navale alors que la position des bateaux est codée dans le programme
-*	Afficher l’aide du jeu  
-Version 1.0 (pour le 20 avril 2018)
-*	S’authentifier en tant que joueur
-*	Logger les faits importants durant toute la durée de fonctionnement de l’application
-*	Le programme choisit une grille au hasard dans un répertoire et la charge 
-*	Afficher la liste des scores atteints lors des parties précédentes
-Notes : 
-*	Des fichiers seront utilisés pour la persistance des données.
-*	Un menu de type console sera utilisé pour accéder aux différentes fonctionnalités.
-*	Une extension pourra être envisagée pour ceux qui auraient terminé toutes les fonctionnalités avant la fin du temps imparti. Elle sera à discuter entre l’élève et le mandant du projet.
+## Génération
+
+Utilisation de GitHub Desktop
+
+Vous aurez besoin de:
+
+- Aller sur GitHub
+- Cherchez IanBoehler
+- Ouvrir le repository
+
+Pour l'exécutable, vous devez:
+
+1. Aller dans le dossier repository
+1. ouvrir le dossier cmake-build-debug
+1. Ouvrir le fichier BN-Bataille-Navale
+
+## Exécution
+(Cette section explique comment exécuter le programme)
+Pour exécuter le programme, vous devez:
+
+1. Aller dans le repository
+1. Ouvrir "Bataille-Navale"
+1. Ouvrir l'executable
