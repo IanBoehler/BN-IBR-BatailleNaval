@@ -5,13 +5,13 @@
 
 ## Génération
 
-Utilisation de GitHub Desktop
+Accès au repository
 
 Vous aurez besoin de:
 
-- Aller sur GitHub
-- Cherchez IanBoehler
-- Ouvrir le repository
+- Télécharger le repository
+- Executer depuis son pc 
+
 
 Pour l'exécutable, vous devez:
 
