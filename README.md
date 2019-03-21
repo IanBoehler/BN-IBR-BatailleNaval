@@ -18,6 +18,8 @@ Pour l'exécutable, vous devez:
 1. Aller dans le dossier repository
 1. ouvrir le dossier cmake-build-debug
 1. Ouvrir le fichier BN-Bataille-Navale
+1. Télécharger le .exe
+1. Accepter le téléchargement malgré les avertissement de votre windows
 
 ## Exécution
 
