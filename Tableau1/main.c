@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <windows.h>
 
-#define SIZE 9
+#define SIZE 10
 #define STLC 218 // ┌, Single Top Left Corner
 #define STRC 191 // ┐, Single Top Right Corner
 #define SBLC 192 // └, Single Bottom Left Corner
@@ -15,15 +15,27 @@
 #define SHTB 194 // ┬, Single Horizontal Top Border
 #define SC   197 // ┼, Single Center
 
+int Tableau[10][10] = {{3,  0,  0,  0, 0, 0,  0, 0,  0, 0},
+                       {3,  0,  0,  0, 1, 0,  0, 0,  0, 0},
+                       {13, 0,  0,  0, 0, 0,  0, 0,  0, 0},
+                       {0,  22, 22, 0, 0, 0,  0, 0,  0, 0},
+                       {0,  0,  0,  0, 8, 0,  0, 0,  0, 0},
+                       {0,  0,  0,  0, 0, 0,  0, 0,  0, 0},
+                       {0,  0,  0,  0, 0, -1, 0, 0,  0, 0},
+                       {0,  0,  0,  0, 0, 0,  0, -1, 0, 0},
+                       {0,  0,  0,  0, 0, 0,  0, 0,  0, 0},
+                       {0,  0,  0,  0, 0, 0,  0, 0,  0, 0}};
 
 void TopBorder(int width) {
+    printf(" ");
+
     for (int Lettre = 65; Lettre <= 74; Lettre++) {
-        printf("     %c", Lettre);
+        printf("   %c", Lettre);
 
 
     }
     printf("\n");
-    printf("%c", STLC);  //┌
+    printf("  %c", STLC);  //┌
     for (int Choix = 0; Choix < width - 1; Choix++) {
 
 
@@ -32,22 +44,35 @@ void TopBorder(int width) {
     printf("%c%c%c%c\n", SHSB, SHSB, SHSB, STRC); //─┐
 }
 
-void VerticalBarre(int width) {
-    for (int Choix = 0; Choix < SIZE + 1; Choix++) { // C'est les trais du millieu
-        printf("%c   ", SVSB);
+void VerticalBarre(int width, int row) {
+    char carAff = 'x';
+    printf("%2d", row + 1);
+    for (int Choix = 0; Choix < width; Choix++) { // C'est les trais du millieu
+        carAff = ' ';
+        // Tire loupé donc à l'eau
+        if ((Tableau[row][Choix]) < 0)
+            carAff = '.';
+        // Tire qui touche donc touché
+        if ((Tableau[row][Choix]) > 10)
+            carAff = 'X';
+        // Tire qui coule le bateau donc coulé
+        if ((Tableau[row][Choix]) > 20)
+            carAff = '/';
+        printf("%c %c ", SVSB, carAff);
     }
+    printf("%c", SVSB);
 }
 
 void PluseBarre(int width) {
-    printf("\n%c", SVLB);
-    for (int Choix = 1; Choix < SIZE; Choix++) { // Les +
+    printf("\n  %c", SVLB);
+    for (int Choix = 1; Choix < width; Choix++) { // Les +
         printf("%c%c%c%c", SHSB, SHSB, SHSB, SC);
     }
     printf("%c%c%c%c\n", SHSB, SHSB, SHSB, SVRB);
 }
 
 void BottomBorder(int width) {
-    printf("\n%c", SBLC);
+    printf("\n  %c", SBLC);
     for (int Choix = 1; Choix < width; Choix++) {
         printf("%c%c%c%c", SHSB, SHSB, SHSB, SHBB);
     }
@@ -66,7 +91,7 @@ int grille(void) {
         if (row > 0) {
             PluseBarre(SIZE);
         }
-        VerticalBarre(SIZE);
+        VerticalBarre(SIZE, row);
     }
     BottomBorder(SIZE);
 }
