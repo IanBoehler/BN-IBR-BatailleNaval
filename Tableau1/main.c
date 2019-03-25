@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <windows.h>
 
-#define SIZE 10
+#define SIZE 12
 #define STLC 218 // ┌, Single Top Left Corner
 #define STRC 191 // ┐, Single Top Right Corner
 #define SBLC 192 // └, Single Bottom Left Corner
@@ -49,13 +49,13 @@ void VerticalBarre(int width, int row) {
     printf("%2d", row + 1);
     for (int Choix = 0; Choix < width; Choix++) { // C'est les trais du millieu
         carAff = ' ';
-        // Tire loupé donc à l'eau
+        // Tir loupé donc à l'eau
         if ((Tableau[row][Choix]) < 0)
             carAff = '.';
-        // Tire qui touche donc touché
+        // Tir qui touche donc touché
         if ((Tableau[row][Choix]) > 10)
             carAff = 'X';
-        // Tire qui coule le bateau donc coulé
+        // Tir qui coule le bateau donc coulé
         if ((Tableau[row][Choix]) > 20)
             carAff = '/';
         printf("%c %c ", SVSB, carAff);

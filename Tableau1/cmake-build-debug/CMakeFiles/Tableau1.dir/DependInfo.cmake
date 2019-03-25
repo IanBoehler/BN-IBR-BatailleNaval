@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Ian.Boehler/CLionProjects/Tableau1/main.c" "C:/Users/Ian.Boehler/CLionProjects/Tableau1/cmake-build-debug/CMakeFiles/Tableau1.dir/main.c.obj"
+  "C:/SandBox/WarShip/Tableau1/main.c" "C:/SandBox/WarShip/Tableau1/cmake-build-debug/CMakeFiles/Tableau1.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
