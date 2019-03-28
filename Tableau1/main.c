@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <windows.h>
 
-#define SIZE 12
+#define SIZE 10
 #define STLC 218 // ┌, Single Top Left Corner
 #define STRC 191 // ┐, Single Top Right Corner
 #define SBLC 192 // └, Single Bottom Left Corner
@@ -118,7 +118,13 @@ int main(void) {
 
 
         case 1 :
+            printf("La seule grille c'est celle si");
+            char tir[5];
             grille();
+            printf("Tirez :");
+            scanf("%s", &tir);
+            int col = tir[0] - 49;
+            int ligne = tir[1] - 65;
             break;
         case 2:
             printf("Les regles sont simple, vous avez des bateaux et vous devez coulez ceux de l'ennemi\n\n");
