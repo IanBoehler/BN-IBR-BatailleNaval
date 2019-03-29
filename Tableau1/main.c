@@ -16,13 +16,13 @@
 #define SC   197 // ┼, Single Center
 
 int Tableau[10][10] = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                       {0, 0, 0, 0, 0, 0, 0, 0, 3, 0},
+                       {0, 0, 0, 0, 0, 0, 0, 0, 13, 0},
+                       {0, 0, -1, 0, 0, 0, 0, 0, 3, 0},
+                       {0, 0, 0, 0, 22, 0, 0, 0, 0, 0},
+                       {0, 0, 0, 0, 22, 0, 0, 0, 0, 0},
                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                       {0, 0, 4, 4, 4, 4, 0, -1, 0, 0},
                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 
@@ -126,15 +126,15 @@ int main(void) {
             int col = tir[0] - 65;
             int ligne = tir[1] - 49;
             printf("\nVous avez tire en %d %d\n", col, ligne);
-            if (Tableau[ligne][col] == 0){
-                Tableau[ligne][col] == Tableau [ligne][col] - 1;
-                if(Tableau[ligne][col] == 0){
+            if (Tableau[ligne][col] == 0) {
+                Tableau[ligne][col] == Tableau[ligne][col] - 1;
+                if (Tableau[ligne][col] == 0) {
                     Tableau[ligne][col] = Tableau[ligne][col] - 1;
                     grille();
-                }else if(Tableau[ligne][col] < 20){
+                } else if (Tableau[ligne][col] < 20) {
                     Tableau[ligne][col] = Tableau[ligne][col] + 10;
                     grille();
-                }else if(Tableau[ligne][col] > 20){
+                } else if (Tableau[ligne][col] > 20) {
                     Tableau[ligne][col] = Tableau[ligne][col] + 10;
                     grille();
                 }
