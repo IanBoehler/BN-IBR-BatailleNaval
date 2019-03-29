@@ -15,16 +15,16 @@
 #define SHTB 194 // ┬, Single Horizontal Top Border
 #define SC   197 // ┼, Single Center
 
-int Tableau[10][10] = {{3,  0,  0,  0, 0, 0,  0, 0,  0, 0},
-                       {3,  0,  0,  0, 1, 0,  0, 0,  0, 0},
-                       {13, 0,  0,  0, 0, 0,  0, 0,  0, 0},
-                       {0,  22, 22, 0, 0, 0,  0, 0,  0, 0},
-                       {0,  0,  0,  0, 8, 0,  0, 0,  0, 0},
-                       {0,  0,  0,  0, 0, 0,  0, 0,  0, 0},
-                       {0,  0,  0,  0, 0, -1, 0, 0,  0, 0},
-                       {0,  0,  0,  0, 0, 0,  0, -1, 0, 0},
-                       {0,  0,  0,  0, 0, 0,  0, 0,  0, 0},
-                       {0,  0,  0,  0, 0, 0,  0, 0,  0, 0}};
+int Tableau[10][10] = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 
 void TopBorder(int width) {
     printf(" ");
@@ -51,7 +51,7 @@ void VerticalBarre(int width, int row) {
         carAff = ' ';
         // Tir loupé donc à l'eau
         if ((Tableau[row][Choix]) < 0)
-            carAff = '.';
+            carAff = '~';
         // Tir qui touche donc touché
         if ((Tableau[row][Choix]) > 10)
             carAff = 'X';
@@ -123,8 +123,24 @@ int main(void) {
             grille();
             printf("Tirez :");
             scanf("%s", &tir);
-            int col = tir[0] - 49;
-            int ligne = tir[1] - 65;
+            int col = tir[0] - 65;
+            int ligne = tir[1] - 49;
+            printf("\nVous avez tire en %d %d\n", col, ligne);
+            if (Tableau[ligne][col] == 0){
+                Tableau[ligne][col] == Tableau [ligne][col] - 1;
+                if(Tableau[ligne][col] == 0){
+                    Tableau[ligne][col] = Tableau[ligne][col] - 1;
+                    grille();
+                }else if(Tableau[ligne][col] < 20){
+                    Tableau[ligne][col] = Tableau[ligne][col] + 10;
+                    grille();
+                }else if(Tableau[ligne][col] > 20){
+                    Tableau[ligne][col] = Tableau[ligne][col] + 10;
+                    grille();
+                }
+
+
+            }
             break;
         case 2:
             printf("Les regles sont simple, vous avez des bateaux et vous devez coulez ceux de l'ennemi\n\n");
