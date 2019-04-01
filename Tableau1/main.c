@@ -120,40 +120,51 @@ int main(void) {
         case 1 :
             printf("La seule grille c'est celle si");
             char tir[5];
-            grille();
-            printf("Tirez :");
-            scanf("%s", &tir);
-            int col = tir[0] - 65;
-            int ligne = tir[1] - 49;
-            printf("\nVous avez tire en %d %d\n", col, ligne);
+            int Partieencours = 1;
+            while (Partieencours) {
+                grille();
+                printf("Tirez :");
+                scanf("%s", &tir);
+                int col = tir[0] - 65;
+                int ligne = tir[1] - 49;
+                printf("\nVous avez tire en %d %d\n", col, ligne);
 
 
-            Tableau[ligne][col] = -1;
-            {
-                printf("A l'eau");
+                if (Tableau[ligne][col] == -1) {
+                    printf("\nDeja Tire\n");
+                }
+                if (Tableau[ligne][col] == 0) {
+                    printf("\nA l'eau\n");
+
+                    Tableau[ligne][col] = -1;
+                }
+
+                if (Tableau[ligne][col] > 0 && Tableau[ligne][col] < 10) {
+
+                    printf("\nTouche\n");
+
+                    Tableau[ligne][col] = Tableau[ligne][col] + 10;
+                }
+
+
             }
 
-            Tableau[ligne][col] += 10;{
-                
 
+            break;
+        case 2:
+            printf("Les regles sont simple, vous avez des bateaux et vous devez coulez ceux de l'ennemi\n\n");
+            printf("Pour ca vous disposez de 3 bateaux le premier de un de long, le deuxieme de deux de long, le troisieme de trois de long\n\n");
+            printf("Le systeme de tir n'est pas difficile vous entrez les coordonnees et feu !\n\n");
+            printf("Par exemple un type de coordonees c'est B3 pour tirer dans la case B3 le programme vous dira si c'est touche, coule, loupe\n\n");
+            break;
+        case 0 :
+            printf("Fermeture de l'application");
+            break;
 
+        default :
+            printf("Pas valide");
+    }
 
-    };
-    break;
-    case 2:
-        printf("Les regles sont simple, vous avez des bateaux et vous devez coulez ceux de l'ennemi\n\n");
-    printf("Pour ca vous disposez de 3 bateaux le premier de un de long, le deuxieme de deux de long, le troisieme de trois de long\n\n");
-    printf("Le systeme de tir n'est pas difficile vous entrez les coordonnees et feu !\n\n");
-    printf("Par exemple un type de coordonees c'est B3 pour tirer dans la case B3 le programme vous dira si c'est touche, coule, loupe\n\n");
-    break;
-    case 0 :
-        printf("Fermeture de l'application");
-    break;
-
-    default :
-        printf("Pas valide");
-}
-
-system("pause");
-return 0;
+    system("pause");
+    return 0;
 }
