@@ -120,6 +120,7 @@ int main(void) {
         case 1 :
             printf("La seule grille c'est celle si");
             char tir[5];
+            int coule;
             int Partieencours = 1;
             while (Partieencours) {
                 grille();
@@ -145,11 +146,13 @@ int main(void) {
 
                     Tableau[ligne][col] = Tableau[ligne][col] + 10;
                 }
-
+               // if (Tableau[ligne][col] > 20){
+               //     printf("\nCoule\n");
+               // }
 
             }
 
-
+            
             break;
         case 2:
             printf("Les regles sont simple, vous avez des bateaux et vous devez coulez ceux de l'ennemi\n\n");
