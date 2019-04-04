@@ -43,12 +43,33 @@ void TopBorder(int width) {
     }
     printf("%c%c%c%c\n", SHSB, SHSB, SHSB, STRC); //─┐
 }
+int Coule[5];
+
+
+
+
+void coule(int x, int y) {
+    for (int i = 1; i <= 4; i++){
+        if(Coule[i] == i){
+            for (int s = 0; s < 9; s++) {
+                for (int u = 0; u < 9; u++) {
+                    if(Tableau[x][y] == 10 + i){
+                        Tableau[x][y] += 10;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 
 void VerticalBarre(int width, int row) {
     char carAff = 'x';
     printf("%2d", row + 1);
     for (int Choix = 0; Choix < width; Choix++) { // C'est les trais du millieu
         carAff = ' ';
+        coule(row , Choix);
         // Tir loupé donc à l'eau
         if ((Tableau[row][Choix]) < 0)
             carAff = '~';
@@ -95,6 +116,43 @@ int grille(void) {
     }
     BottomBorder(SIZE);
 }
+char tir[5];
+void Partie(){
+    int gameover = 0;
+    do {
+        grille();
+        printf("       Tirez :");
+        scanf("%s", tir);
+        int col = tir[0] - 65;          // Variable pour définir la colonne de la grille
+        int ligne = tir[1] - 49;        // Variable pour définir la ligne de la grille
+        printf("\nVous avez tirer en %d %d\n", col, ligne);
+        if (Tableau[ligne][col] == 0){
+            Tableau[ligne][col] = -1;
+            printf("\nA l'eau !\n");
+        }else if(Tableau[ligne][col] > 0 && Tableau[ligne][col] < 10){
+            Coule[Tableau[ligne][col]] += 1;
+            Tableau[ligne][col] += 10;
+            printf("\nToucher\n");
+        }else if(Tableau[ligne][col] == 2 || Tableau[ligne][col] == 3 || Tableau[ligne][col] == 4){
+            Coule[Tableau[ligne][col]] += 1;
+            Tableau[ligne][col] += 10;
+
+        }else if(Tableau[ligne][col] > 10 || Tableau[ligne][col] == -1){
+            printf("\nVous avez deja tirer dans cette case !\n");
+        }
+        gameover = 1;
+
+        for (int i = 1; i <= 4; i++){
+            if(Coule[i] != i){
+                gameover = 0;
+            }
+        }
+        if(gameover == 1){
+            printf("\n\nBRAVO VOUS AVEZ GAGNER !");
+            system("pause");
+        }
+    }while(gameover == 0);
+}
 
 
 int main(void) {
@@ -118,41 +176,13 @@ int main(void) {
 
 
         case 1 :
+
             printf("La seule grille c'est celle si");
-            char tir[5];
-            int coule;
-            int Partieencours = 1;
-            while (Partieencours) {
-                grille();
-                printf("Tirez :");
-                scanf("%s", &tir);
-                int col = tir[0] - 65;
-                int ligne = tir[1] - 49;
-                printf("\nVous avez tire en %d %d\n", col, ligne);
+            Partie();
 
 
-                if (Tableau[ligne][col] == -1) {
-                    printf("\nDeja Tire\n");
-                }
-                if (Tableau[ligne][col] == 0) {
-                    printf("\nA l'eau\n");
 
-                    Tableau[ligne][col] = -1;
-                }
 
-                if (Tableau[ligne][col] > 0 && Tableau[ligne][col] < 10) {
-
-                    printf("\nTouche\n");
-
-                    Tableau[ligne][col] = Tableau[ligne][col] + 10;
-                }
-               // if (Tableau[ligne][col] > 20){
-               //     printf("\nCoule\n");
-               // }
-
-            }
-
-            
             break;
         case 2:
             printf("Les regles sont simple, vous avez des bateaux et vous devez coulez ceux de l'ennemi\n\n");
