@@ -1,7 +1,7 @@
 # Bataille-Navale
 
 ## Description
-	Un programme fait en C qui permettera de faire une partie en 1 contre 1 avec l'ordinateur
+	Un programme fait en C qui permettera de faire une partie sur une grille fixe
 
 ## Génération
 
@@ -27,4 +27,6 @@ Pour exécuter le programme, vous devez:
 
 1. Double cliquer sur le BN-Bataille-Naval.exe
 1. Suivre les instructions qui s'affiche
+1. Pour relancer une partie il faut fermer le BN-Bataille-Naval.exe puis le réouvrir
+
 
